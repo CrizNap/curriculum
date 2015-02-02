@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS `#__curriculum_item`;
+DROP TABLE IF EXISTS `#__curriculum_system`;
+DROP TABLE IF EXISTS `#__curriculum_belt`;
+DROP TABLE IF EXISTS `#__curriculum_systemitem`;
+DROP TABLE IF EXISTS `#__curriculum_type`;
+DROP TABLE IF EXISTS `#__curriculum_itemrelationship`;
+DROP TABLE IF EXISTS `#__curriculum_severity`;
+DROP TABLE IF EXISTS `#__curriculum_familygroup`;
+DROP TABLE IF EXISTS `#__curriculum_basic_category`;

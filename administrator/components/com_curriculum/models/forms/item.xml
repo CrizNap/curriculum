@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="essential">
+        <field name="item_id"
+               type="hidden"
+               label="JGLOBAL_FIELD_ID_LABEL"
+               description="JGLOBAL_FIELD_ID_DESC"
+               size="10"
+               default="0"
+               readonly="true"
+               class="readonly"
+               />
+
+        <field name="item_name"
+               type="text"
+               label="COM_CURRICULUM_FIELD_ITEM_NAME_LABEL"
+               description="COM_CURRICULUM_FIELD_ITEM_NAME_DESC"
+               class="inputbox"
+               size="30"
+               required="true"
+                />
+
+        <field name="item_alias"
+               type="text"
+               label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+               size="30"
+               required="false"
+                />
+
+        <field name="item_type"
+               type="sql"
+               label="COM_CURRICULUM_FIELD_ITEM_TYPE_LABEL"
+               description="COM_CURRICULUM_FIELD_ITEM_TYPE_DESC"
+               query="SELECT type_id AS value, type_id AS item_type FROM #__curriculum_type"
+               required="true"
+                >
+            <option value="">COM_CURRICULUM_OPTION_SELECT_TYPE</option>
+        </field>
+
+        <field name="published"
+               type="list"
+               label="JSTATUS"
+               description="JFIELD_PUBLISHED_DESC"
+               class="inputbox"
+               filter="intval"
+               size="1"
+               default="1"
+                >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+    </fieldset>
+
+    <fieldset name="editor">
+        <field name="item_description"
+               type="editor"
+               label="COM_CURRICULUM_FIELD_ITEM_TEXT_LABEL"
+               description="COM_CURRICULUM_FIELD_ITEM_TEXT_DESC"
+               filter="safehtml"
+               class="inputbox"
+                />
+    </fieldset>
+
+    <fieldset name="technique" label="Technique Options">
+        <field name="technique_attack"
+               type="text"
+               label="COM_CURRICULUM_FIELD_ITEM_ATTACK_LABEL"
+               description="COM_CURRICULUM_FIELD_ITEM_ATTACK_DESC"
+               class="inputbox"
+               size="30"
+               required="true"
+                />
+
+        <field name="severity_id"
+               type="sql"
+               label="COM_CURRICULUM_FIELD_ITEM_SEVERITY_LABEL"
+               description="COM_CURRICULUM_FIELD_ITEM_SEVERITY_DESC"
+               required="true" query="SELECT severity_id AS value, severity_id FROM #__curriculum_severity"
+                >
+            <option value="">COM_CURRICULUM_OPTION_SELECT_SEVERITY</option>
+        </field>
+
+        <field name="familygroup_id"
+               type="sql"
+               multiple="multiple"
+               key_field="familygroup_id"
+               value_field="familygroup_id"
+               label="COM_CURRICULUM_FIELD_ITEM_FAMILYGROUP_LABEL"
+               description="COM_CURRICULUM_FIELD_ITEM_FAMILYGROUP_DESC"
+               required="true" query="SELECT familygroup_id FROM #__curriculum_familygroup"
+                >
+            <option value="">COM_CURRICULUM_OPTION_SELECT_FAMILYGROUP</option>
+        </field>
+    </fieldset>
+
+    <fieldset name="basic" label="Basic Options">
+        <field name="basic_category_id"
+               type="sql"
+               label="COM_CURRICULUM_FIELD_BASIC_CATEGORY_LABEL"
+               description="COM_CURRICULUM_FIELD_BASIC_CATEGORY_DESC"
+               required="false"
+               query="SELECT basic_category_id AS value, basic_category_id FROM #__curriculum_basic_category"
+                >
+            <option value="">COM_CURRICULUM_OPTION_SELECT_BASIC_CATEGORY</option>
+        </field>
+    </fieldset>
+</form>

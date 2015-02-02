@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<extension type="component" version="2.5.28" method="upgrade">
+    <name>com_curriculum</name>
+    <author>Curtis Knapp</author>
+    <version>1.0.0</version>
+    <creationDate>October 2012</creationDate>
+    <copyright>Copyright (C) 2012</copyright>
+    <authorEmail>knappcur@hotmail.com</authorEmail>
+    <authorUrl>www.criznap.com</authorUrl>
+    <description>COM_CURRICULUM_DESC</description>
+
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.com_curriculum.ini</language>
+    </languages>
+
+    <media destination="com_curriculum" folder="media">
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>js</folder>
+        <filename>index.html</filename>
+    </media>
+
+    <files folder="components/com_curriculum">
+        <filename>curriculum.php</filename>
+        <filename>index.html</filename>
+    </files>
+
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">install.mysql.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+
+    <administration>
+        <languages folder="administrator/language/en-GB">
+            <language tag="en-GB">en-GB.com_curriculum.sys.ini</language>
+            <language tag="en-GB">en-GB.com_curriculum.ini</language>
+        </languages>
+        <files folder="administrator/components/com_curriculum">
+            <filename>curriculum.php</filename>
+            <filename>index.html</filename>
+            <filename>controller.php</filename>
+            <filename>install.mysql.sql</filename>
+            <filename>uninstall.mysql.sql</filename>
+            <folder>models</folder>
+            <folder>views</folder>
+            <folder>controllers</folder>
+            <folder>tables</folder>
+        </files>
+        <menu link="option=com_curriculum" img="../media/com_curriculum/images/com_curriculum-icon-16x16.png">COM_CURRICULUM_MENU</menu>
+        <submenu>
+            <menu link="option=com_curriculum&amp;view=items"
+                  alt="COM_CURRICULUM_MENU_ITEMS">COM_CURRICULUM_MENU_ITEMS</menu>
+            <menu link="option=com_curriculum&amp;view=systems"
+                  alt="COM_CURRICULUM_MENU_SYSTEMS">COM_CURRICULUM_MENU_SYSTEMS</menu>
+        </submenu>
+    </administration>
+</extension>
